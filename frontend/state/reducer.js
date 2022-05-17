@@ -13,7 +13,7 @@ function count(countState = 0, action) {
 }
 
 const initialTodos = [
-  { id: getId(), name: "Walk the dog NOW!!!!", completed: false },
+  { id: getId(), name: "Walk the dog", completed: false },
   { id: getId(), name: "Learn React", completed: true },
   { id: getId(), name: "Have fun", completed: false },
 ]
