@@ -16,16 +16,17 @@ Other browser/Node/NPM configurations might work but haven't been tested.
 - Visit your app by navigating to `http://localhost:3000` with Chrome.
 - Reset to the instructor's remote branch executing `npm run ketchup`.
 
-## Wiring Redux
+## Wiring Redux with Thunk
 
-- 🔥 STEP 1 - Install `redux` and `react-redux`
+- 🔥 STEP 1 - Install `redux`, `redux-thunk` and `react-redux`
 - 🔥 STEP 2 - At the top-level component of the app:
   - 2.1 - Import the needed dependencies:
 
     ```js
     // frontend/index.js
     import { Provider } from 'react-redux'
-    import { legacy_createStore, compose } from 'redux'
+    import { legacy_createStore, compose, applyMiddleware } from 'redux'
+    import thunk from 'redux-thunk'
     ```
 
   - 2.2 - Build a dummy combined reducer just for wiring the app:
@@ -37,13 +38,13 @@ Other browser/Node/NPM configurations might work but haven't been tested.
     }
     ```
 
-  - 2.3 - Build a store that works with Redux Devtools extension:
+  - 2.3 - Build a store that works with Thunk and Redux Devtools:
 
     ```js
     let store
     export const resetStore = () => {
       const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-      store = legacy_createStore(reducer, composeEnhancers())
+      store = legacy_createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
     }
     resetStore()
     ```
@@ -58,70 +59,16 @@ Other browser/Node/NPM configurations might work but haven't been tested.
     )
     ```
 
-  - 2.5 - Create an `INCREMENT` action type:
+- 🔥 STEP 3 - Flesh out the reducer, action types and action creators:
 
-    ```JS
-    const INCREMENT = 'INCREMENT'
-    ```
-
-  - 2.6 - Create an `increment` action creator function:
-
-    ```js
-    export function increment(amount) {
-      return {
-        type: INCREMENT,
-        payload: amount,
-      }
-    }
-    ```
-
-  - 2.7 - Edit the reducer to support the `INCREMENT` action type:
-
-    ```js
-    const initialState = { count: 0 }
-    function reducer(state = initialState, action) {
-      switch (action.type) {
-        case INCREMENT: {
-          return { ...state, count: state.count + action.payload }
-        }
-        default:
-          return state
-      }
-    }
-    ```
-
-- 🔥 STEP 3 - Go to a subcomponent you wish to "connect" to application state:
-  - 3.1 - Import `connect` from `react-redux`, and the `increment` action creator:
-
-    ```js
-    import { connect } from 'react-redux'
-    import { increment } from '../index' // path might be different
-    ```
-
-  - 3.2 - Connect the component:
-
-    ```js
-    export default connect(st => st, { increment })(App) // if connecting App
-    ```
-
-  - 3.3 - Render the count, and a button to increment:
-
-    ```js
-      // note how both state and the action creator ARRIVE VIA PROPS
-      <span>{props.count}</span>
-      <button onClick={evt => props.increment(3)}>inc</button>
-    ```
-
-- 🔥 STEP 4 - See it work! Then split the state machinery into separate files:
-
-  - 4.1 - __Action types__
+  - 3.1 - __Action types__
 
     ```js
     // state/action-types.js
     export const INCREMENT = 'INCREMENT'
     ```
 
-  - 4.2 - __Action creators__
+  - 3.2 - __Action creators__
 
     ```js
     // state/action-creators.js
@@ -135,7 +82,7 @@ Other browser/Node/NPM configurations might work but haven't been tested.
     }
     ```
 
-  - 4.3 - __Combined reducer__
+  - 3.3 - __Combined reducer__
 
     ```js
     // state/reducer.js
@@ -159,23 +106,33 @@ Other browser/Node/NPM configurations might work but haven't been tested.
     })
     ```
 
-  - 4.4 - Fix the imports inside the top of the app:
+  - 3.4 - Fix the imports inside the top of the app:
 
     ```js
     import { Provider } from 'react-redux'
-    import { legacy_createStore, compose } from 'redux'
-    import reducer from './state/reducer' // this
-
-    let store
-    export const resetStore = () => {
-      const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-      store = legacy_createStore(reducer, composeEnhancers())
-    }
-    resetStore()
+    import { legacy_createStore, compose, applyMiddleware } from 'redux'
+    import thunk from 'redux-thunk'
+    import reducer from './state/reducer' // delete the dummy reducer
     ```
 
-  - 4.5 - Fix the imports inside the subcomponent
+- 🔥 STEP 4 - Go to a subcomponent you wish to "connect" to application state:
+  - 4.1 - Import `connect` from `react-redux`, and the `increment` action creator:
 
     ```js
-    import { increment } from '../state/action-creators'
+    import { connect } from 'react-redux'
+    import * as actions from '../index' // path might be different
+    ```
+
+  - 4.2 - Connect the component:
+
+    ```js
+    export default connect(st => st, actions)(App) // if connecting App
+    ```
+
+  - 4.3 - Render the count, and a button to increment:
+
+    ```js
+      // note how both state and the action creator ARRIVE VIA PROPS
+      <span>{props.count}</span>
+      <button onClick={evt => props.increment(3)}>inc</button>
     ```
