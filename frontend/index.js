@@ -7,15 +7,16 @@ import './styles/styles.css'
 
 // redux-related imports
 import { Provider } from 'react-redux'
-import { legacy_createStore, compose } from 'redux'
+import { legacy_createStore, compose, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 import reducer from './state/reducer'
 
 // let's spin up the redux store
-// with devtools support. BOILERPLATE!!!
+// with thunk middleware and devtools support
 let store
 export const resetStore = () => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-  store = legacy_createStore(reducer, composeEnhancers())
+  store = legacy_createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
 }
 resetStore()
 
