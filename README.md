@@ -106,7 +106,7 @@ Other browser/Node/NPM configurations might work but haven't been tested.
     })
     ```
 
-  - 3.4 - Fix the imports inside the top of the app:
+  - 3.4 - Fix the imports inside the top of the app, delete dummy reducer:
 
     ```js
     import { Provider } from 'react-redux'
