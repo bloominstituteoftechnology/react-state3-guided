@@ -135,7 +135,7 @@ The API will make other responses if the requests are defective:
     import { Provider } from 'react-redux'
     import { legacy_createStore, compose, applyMiddleware } from 'redux'
     import thunk from 'redux-thunk'
-    import reducer from './state/reducer' // delete the dummy reducer
+    import reducer from './state/reducer' // delete the dummy reducer in this file
     ```
 
 - 🔥 STEP 4 - Go to a subcomponent you wish to "connect" to application state:
