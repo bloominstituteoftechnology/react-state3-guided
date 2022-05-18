@@ -6,6 +6,7 @@
 - NPM 8.x (update NPM executing `npm i -g npm`)
 - Chrome >= 100.x
 - Redux Devtools extension for Chrome
+- Postman HTTP client
 
 Other browser/Node/NPM configurations might work but haven't been tested.
 
