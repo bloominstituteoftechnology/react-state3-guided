@@ -19,7 +19,7 @@ Other browser/Node/NPM configurations might work but haven't been tested.
 
 ## Endpoints
 
-The following endpoints exist in this project:
+These endpoints exist in this project and should be tested with Postman:
 
 - `GET http://localhost:9000/api/todos`
   1. Expects no payload
