@@ -26,7 +26,9 @@ function todos(todosState = initialTodos, action) {
         return { ...td, completed: !td.completed }
       })
     }
-    case types.ADD_TODO: {
+    case types.SET_ALL_TODOS:
+      return 
+    case types.ADD_TODO: { // ?????
       const newTodo = action.payload
       return todosState.concat(newTodo)
     }
