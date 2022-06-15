@@ -31,7 +31,7 @@ function todos(todosState = initialTodos, action) {
     // }
     case types.SET_ALL_TODOS:
       return action.payload
-    case types.ADD_TODO: { // ?????
+    case types.ADD_TODO: {
       const newTodo = action.payload
       return todosState.concat(newTodo)
     }
