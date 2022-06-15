@@ -34,3 +34,7 @@ export function addTodo(todoName) { // ???????
     payload: { name: todoName, completed: false, id: getId() }
   }
 }
+
+export function fetchTodos() {
+  
+}
