@@ -15,7 +15,8 @@ const initialTodos = []
 function todos(todosState = initialTodos, action) {
   switch (action.type) {
     case SET_UPDATED_TODO: {
-      const updatedTodo = 
+      const updatedTodo = action.payload
+      debugger
     }
     case types.TOGGLE_COMPLETED: { // ?????
       const id = action.payload
