@@ -23,7 +23,6 @@ function todos(todosState = initialTodos, action) {
       })
     }
     case types.SET_ALL_TODOS:
-      debugger
       return action.payload
     case types.ADD_TODO: { // ?????
       const newTodo = action.payload

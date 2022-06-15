@@ -37,13 +37,11 @@ export function addTodo(todoName) { // ???????
 }
 
 export function fetchTodos() {
-  debugger
   return function (dispatch) {
     // async thing
     // dispatch an action here to start a spinner
     axios.get('http://localhost:9000/api/todos')
       .then(res => {
-        debugger
         dispatch({ type: types.SET_ALL_TODOS, payload: res.data.data })
         // on success or failure (in the distant future)
         // then some action will be dispatched to change state

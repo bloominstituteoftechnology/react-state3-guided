@@ -16,7 +16,6 @@ class TodoList extends React.Component {
         {
           todos.reduce((acc, td) => {
             const shouldDisplay = displayCompleteds || !td.completed
-            debugger
             if (shouldDisplay) return acc.concat(
               <Todo todo={td} key={td.id} />
             )
