@@ -36,8 +36,10 @@ export function addTodo(todoName) { // ???????
   }
 }
 
-export function patchTodo() {
-  
+export function patchTodo(id) {
+  return function (dispatch) {
+    axios.put()
+  }
 }
 
 export function fetchTodos() {
