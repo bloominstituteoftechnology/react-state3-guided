@@ -40,7 +40,7 @@ export function patchTodo(id) {
   return function (dispatch) {
     axios.patch(`http://localhost:9000/api/todos/${id}`)
       .then(res => {
-        debugger
+       dispatch({ type: })
       })
       .catch(err => {
         debugger
