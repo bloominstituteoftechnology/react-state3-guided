@@ -29,8 +29,10 @@ export function addTodo(todoName) { // ???????
   }
 }
 
-export function postTodo() {
-  
+export function postTodo(name) {
+  return function (dispatch) {
+    axios.post()
+  }
 }
 
 export function patchTodo(id) {
