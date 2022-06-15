@@ -24,6 +24,7 @@ export function toggleDisplayCompleteds() {
 
 export function postTodo(name) {
   return function (dispatch) {
+    dispatch({ type: 'START_SPINNER' })
     axios.post('http://localhost:9000/api/todos', { name })
       .then(res => {
         const newTodo = res.data.data
