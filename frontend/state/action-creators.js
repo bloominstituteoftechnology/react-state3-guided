@@ -22,13 +22,6 @@ export function toggleDisplayCompleteds() {
   }
 }
 
-export function addTodo(todoName) { // ???????
-  return {
-    type: types.ADD_TODO,
-    payload: { name: todoName, completed: false, id: getId() }
-  }
-}
-
 export function postTodo(name) {
   return function (dispatch) {
     axios.post('http://localhost:9000/api/todos', { name })
