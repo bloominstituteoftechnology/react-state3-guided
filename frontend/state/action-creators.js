@@ -40,7 +40,8 @@ export function patchTodo(id) {
   return function (dispatch) {
     axios.patch(`http://localhost:9000/api/todos/${id}`)
       .then(res => {
-       dispatch(fetchTodos())
+      //  dispatch(fetchTodos()) // works but is not efficient
+       dispatch({ })
       })
       .catch(err => {
         debugger
