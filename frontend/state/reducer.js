@@ -17,7 +17,9 @@ function todos(todosState = initialTodos, action) {
     case types.SET_UPDATED_TODO: {
       const updatedTodo = action.payload
       return todosState.map(todo => {
-        return 
+        return todo.id == updatedTodo.id
+          ? updatedTodo
+          : todo
       })
     }
     case types.TOGGLE_COMPLETED: { // ?????
