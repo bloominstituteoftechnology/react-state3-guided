@@ -1,35 +1,38 @@
 import React from 'react'
+// REDUX related imports
+import { connect } from 'react-redux' // utility to "connect"
+import * as actions from '../state/action-creators'
 
 class Form extends React.Component {
   onChange = evt => {
     const { name, value } = evt.target
-    this.props.onChange({ name, value })
+    this.props.changeInput({ name, value })
   }
   onSubmit = evt => {
+    const { addTodo, form } = this.props
     evt.preventDefault()
-    this.props.onSubmit()
+    addTodo(form.name)
   }
   render() {
     const {
-      values,
-      toggleShouldShow,
+      form,
+      toggleDisplayCompleteds,
       displayCompleteds,
-      disabled,
     } = this.props
     return (
       <>
         <form id="todoForm" onSubmit={this.onSubmit}>
           <input
             onChange={this.onChange}
-            value={values.name}
+            value={form.name}
             placeholder="Type todo"
             name="name"
             type="text"
           />
-          <input type="submit" disabled={disabled} />
+          <input type="submit" disabled={!form.name.trim().length} />
         </form>
 
-        <button onClick={toggleShouldShow}>
+        <button onClick={toggleDisplayCompleteds}>
           {displayCompleteds ? 'Hide' : 'Show'} Completed
         </button>
       </>
@@ -37,4 +40,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form
+export default connect(st => st, actions)(Form)
