@@ -5,9 +5,9 @@ import * as actions from '../state/action-creators'
 
 class Todo extends React.Component {
   render() {
-    const { todo, toggleCompleted } = this.props
+    const { todo, patchTodo } = this.props
     return (
-      <div onClick={() => toggleCompleted(todo.id)} className="todo">
+      <div onClick={() => patchTodo(todo.id)} className="todo">
         {todo.name}{todo.completed ? ' ✔️' : ''}
       </div>
     )
