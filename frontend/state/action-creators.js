@@ -38,6 +38,7 @@ export function addTodo(todoName) { // ???????
 
 export function fetchTodos() {
   return function (dispatch) {
+    axios.get('http://localhost:9000/api/todos')
     // async thing
     // on success or failure (in the distant future)
     // then some action will be dispatched to change state
