@@ -9,6 +9,7 @@ class Form extends React.Component {
     this.props.changeInput({ name, value })
   }
   onSubmit = evt => {
+    debugger
     const { postTodo, form } = this.props
     evt.preventDefault()
     postTodo(form.name)
