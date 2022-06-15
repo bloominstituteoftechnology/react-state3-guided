@@ -38,7 +38,7 @@ export function addTodo(todoName) { // ???????
 
 export function patchTodo(id) {
   return function (dispatch) {
-    axios.patch('http://localhost:9000/api/todos')
+    axios.patch(`http://localhost:9000/api/todos/${id}`)
   }
 }
 
