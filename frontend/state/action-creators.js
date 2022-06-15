@@ -1,5 +1,4 @@
 import * as types from './action-types'
-import { getId } from '../utils/helpers'
 import axios from 'axios'
 
 export function increment(amount) {
