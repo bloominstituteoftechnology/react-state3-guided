@@ -31,7 +31,7 @@ export function addTodo(todoName) { // ???????
 
 export function postTodo(name) {
   return function (dispatch) {
-    axios.post()
+    axios.post('http://localhost:9000/api/todos' , )
   }
 }
 
