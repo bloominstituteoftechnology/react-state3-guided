@@ -14,9 +14,9 @@ function count(countState = 0, action) {
 const initialTodos = []
 function todos(todosState = initialTodos, action) {
   switch (action.type) {
-    case SET_UPDATED_TODO: {
+    case types.SET_UPDATED_TODO: {
       const updatedTodo = action.payload
-      debugger
+      
     }
     case types.TOGGLE_COMPLETED: { // ?????
       const id = action.payload
