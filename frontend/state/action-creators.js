@@ -42,7 +42,7 @@ export function fetchTodos() {
     // dispatch an action here to start a spinner
     axios.get('http://localhost:9000/api/todos')
       .then(res => {
-        dispatch({ type: types.SET_ALL_TODOS })
+        dispatch({ type: types.SET_ALL_TODOS, payload: res.data.data })
         // on success or failure (in the distant future)
         // then some action will be dispatched to change state
       })
