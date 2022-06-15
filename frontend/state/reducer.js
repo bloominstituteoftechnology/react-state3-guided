@@ -12,11 +12,7 @@ function count(countState = 0, action) {
   }
 }
 
-const initialTodos = [
-  { id: getId(), name: "Walk the dog", completed: false },
-  { id: getId(), name: "Learn React", completed: true },
-  { id: getId(), name: "Have fun", completed: false },
-]
+const initialTodos = []
 function todos(todosState = initialTodos, action) {
   switch (action.type) {
     case types.TOGGLE_COMPLETED: {
@@ -27,7 +23,7 @@ function todos(todosState = initialTodos, action) {
       })
     }
     case types.SET_ALL_TODOS:
-      return 
+      return action.payload
     case types.ADD_TODO: { // ?????
       const newTodo = action.payload
       return todosState.concat(newTodo)
