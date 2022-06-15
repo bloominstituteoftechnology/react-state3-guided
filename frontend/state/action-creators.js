@@ -36,5 +36,8 @@ export function addTodo(todoName) { // ???????
 }
 
 export function fetchTodos() {
-  
+  return function (dispatch) {
+    // async things
+    // on success or failure (in the distant future)
+  }
 }
