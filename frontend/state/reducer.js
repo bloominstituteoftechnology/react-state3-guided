@@ -16,7 +16,6 @@ function todos(todosState = initialTodos, action) {
   switch (action.type) {
     case types.SET_UPDATED_TODO: {
       const updatedTodo = action.payload
-      debugger
       return todosState.map(todo => {
         return todo.id == updatedTodo.id
           ? updatedTodo
