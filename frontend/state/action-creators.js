@@ -1,5 +1,6 @@
 import * as types from './action-types'
 import { getId } from '../utils/helpers'
+import axios from 'axios'
 
 export function increment(amount) {
   return {
@@ -37,7 +38,8 @@ export function addTodo(todoName) { // ???????
 
 export function fetchTodos() {
   return function (dispatch) {
-    // async things
+    // async thing
     // on success or failure (in the distant future)
+    // then some action will be dispatched to change state
   }
 }
