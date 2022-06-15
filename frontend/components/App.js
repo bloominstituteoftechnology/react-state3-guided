@@ -7,7 +7,6 @@ import * as actions from '../state/action-creators'
 
 function App(props) {
   useEffect(() => {
-    debugger
     props.fetchTodos()
   }, [])
   return (
