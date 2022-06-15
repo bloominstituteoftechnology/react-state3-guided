@@ -9,7 +9,7 @@ function App(props) {
   return (
     <div>
       <h1>Todo App</h1>
-      <span>{props.count}</span>
+      <span>{props.count}&nbsp;</span>
       <button onClick={() => props.increment(5)}>inc</button>
       <TodoList />
       <Form />
