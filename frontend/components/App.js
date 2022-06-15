@@ -6,6 +6,9 @@ import { connect } from 'react-redux' // utility to "connect"
 import * as actions from '../state/action-creators'
 
 function App(props) {
+  useEffect(() => {
+    fetchTodos
+  }, [])
   return (
     <div>
       <h1>Todo App</h1>
