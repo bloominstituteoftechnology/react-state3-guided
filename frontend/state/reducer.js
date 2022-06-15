@@ -14,7 +14,10 @@ function count(countState = 0, action) {
 const initialTodos = []
 function todos(todosState = initialTodos, action) {
   switch (action.type) {
-    case types.TOGGLE_COMPLETED: {
+    case SET_UPDATED_TODO: {
+      const updatedTodo = 
+    }
+    case types.TOGGLE_COMPLETED: { // ?????
       const id = action.payload
       return todosState.map(td => {
         if (td.id !== id) return td
