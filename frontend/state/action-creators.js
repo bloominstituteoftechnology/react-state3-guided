@@ -42,12 +42,11 @@ export function fetchTodos() {
     axios.get('http://localhost:9000/api/todos')
       .then(res => {
         debugger
+        // on success or failure (in the distant future)
+        // then some action will be dispatched to change state
       })
       .catch(err => {
         debugger
       })
-
-    // on success or failure (in the distant future)
-    // then some action will be dispatched to change state
   }
 }
