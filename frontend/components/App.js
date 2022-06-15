@@ -7,7 +7,7 @@ import * as actions from '../state/action-creators'
 
 function App(props) {
   useEffect(() => {
-    // props.fetchTodos()
+    props.fetchTodos()
   }, [])
   return (
     <div>
