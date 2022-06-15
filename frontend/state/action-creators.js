@@ -36,7 +36,9 @@ export function addTodo(todoName) { // ???????
   }
 }
 
-export function patchTodo
+export function patchTodo() {
+  
+}
 
 export function fetchTodos() {
   return function (dispatch) {
