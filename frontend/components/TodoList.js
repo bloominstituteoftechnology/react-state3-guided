@@ -6,7 +6,7 @@ import * as actions from '../state/action-creators'
 
 class TodoList extends React.Component {
   componentDidMount() {
-    
+    // this.props.fetchTodos()
   }
   render() {
     const { todos, displayCompleteds } = this.props
