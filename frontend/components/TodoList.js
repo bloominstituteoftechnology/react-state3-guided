@@ -5,6 +5,9 @@ import { connect } from 'react-redux' // utility to "connect"
 import * as actions from '../state/action-creators'
 
 class TodoList extends React.Component {
+  componentDidMount() {
+    
+  }
   render() {
     const { todos, displayCompleteds } = this.props
     return (
