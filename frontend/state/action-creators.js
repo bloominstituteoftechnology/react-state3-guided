@@ -33,6 +33,8 @@ export function postTodo(name) {
   return function (dispatch) {
     axios.post('http://localhost:9000/api/todos', { name })
       .then(res => {
+        const newTodo = res.data.data
+        debugger
         dispatch({ type: types.ADD_TODO, payload: res.data.data })
       })
       .catch(err => {
