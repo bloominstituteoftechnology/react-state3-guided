@@ -39,6 +39,7 @@ export function addTodo(todoName) { // ???????
 export function fetchTodos() {
   return function (dispatch) {
     // async thing
+    // dispatch an action here to start a spinner
     axios.get('http://localhost:9000/api/todos')
       .then(res => {
         debugger
