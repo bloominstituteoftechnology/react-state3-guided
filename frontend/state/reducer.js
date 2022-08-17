@@ -8,7 +8,7 @@ function todos(todosState = initialTodos, action) {
       return action.payload
     }
     case types.TOGGLE_COMPLETED: {
-      const id = action.payload
+      const id = action.payload // 
       return todosState.map(td => {
         if (td.id !== id) return td
         return { ...td, completed: !td.completed }
