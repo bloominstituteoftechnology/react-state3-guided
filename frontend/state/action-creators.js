@@ -44,6 +44,6 @@ export function addTodo(todoName) { // type string
 
 export function toggleCompleted(id) {
   return function (dispatch) {
-    // here we use axios and on success then dispatch the proper action
+    
   }
 }
