@@ -21,7 +21,7 @@ export function getTodos() {
   return function(dispatch) {
     axios.get(URL)
       .then((res) => {
-        debugger
+        dispatch({ type: types. })
       })
       .catch((err) => {
         debugger
