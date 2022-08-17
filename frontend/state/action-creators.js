@@ -15,7 +15,7 @@ export function toggleDisplayCompleteds() {
 }
 
 // ASYNC ACTION CREATORS
-
+const URL = 'http'
 
 export function getTodos() {
   return function(dispatch) {
