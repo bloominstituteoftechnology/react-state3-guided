@@ -28,4 +28,4 @@ function mapStateToProps(state) {
     displayCompleteds: state.displayCompleteds,
   }
 }
-export default connect(mapStateToProps, actions)(App)
+export default connect(mapStateToProps, { toggleDisplayCompleteds })(App)
