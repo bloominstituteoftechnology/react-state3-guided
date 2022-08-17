@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import Form from './Form'
 import TodoList from './TodoList'
 // REDUX related imports
 import { connect } from 'react-redux' // utility to "connect"
-import { }
+import { toggleDisplayCompleteds } from '../state/action-creators'
 
 function App(props) {
   useEffect(() => {
