@@ -23,4 +23,9 @@ function App(props) {
 
 // by connecting, slices of state and action
 // creators arrive into the component via props
+function mapStateToProps(state) {
+  return {
+    displayCompleteds: state.displayCompleteds
+  }
+}
 export default connect(st => st, actions)(App)
