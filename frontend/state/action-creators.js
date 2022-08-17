@@ -21,10 +21,10 @@ export function getTodos() {
   return function(dispatch) {
     axios.get(URL)
       .then((res) => {
-
+        debugger
       })
       .catch((err) => {
-        
+        debugger
       })
   }
 }
