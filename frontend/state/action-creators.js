@@ -29,9 +29,9 @@ export function getTodos() {
   }
 }
 
-export function addTodo(todoName) {
+export function addTodo(todoName) { // type string
   return function (dispatch) {
-    axios.post(URL, )
+    axios.post(URL)
   }
 }
 
