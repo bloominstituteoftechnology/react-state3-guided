@@ -14,16 +14,16 @@ export function toggleDisplayCompleteds() {
   }
 }
 
-export function toggleCompleted(id) {
-  return {
-    type: types.TOGGLE_COMPLETED,
-    payload: id,
-  }
-}
-
 export function addTodo(todoName) {
   return {
     type: types.ADD_TODO,
     payload: { name: todoName, completed: false, id: getId() }
+  }
+}
+
+export function toggleCompleted(id) {
+  return {
+    type: types.TOGGLE_COMPLETED,
+    payload: id,
   }
 }
