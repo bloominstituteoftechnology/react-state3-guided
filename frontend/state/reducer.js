@@ -4,6 +4,9 @@ import * as types from './action-types'
 const initialTodos = []
 function todos(todosState = initialTodos, action) {
   switch (action.type) {
+    case types.ADD_ALL_TODOS: {
+      
+    }
     case types.TOGGLE_COMPLETED: {
       const id = action.payload
       return todosState.map(td => {
