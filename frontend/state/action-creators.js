@@ -44,6 +44,6 @@ export function addTodo(todoName) { // type string
 
 export function toggleCompleted(id) {
   return function (dispatch) {
-    axios.patch(URL)
+    axios.patch(URL + id)
   }
 }
