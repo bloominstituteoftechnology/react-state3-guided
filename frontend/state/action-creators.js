@@ -18,10 +18,10 @@ export function toggleDisplayCompleteds() {
 const URL = 'http://localhost:9000/api/todos/' // add slash at the end!
 
 export function getTodos() {
-  return function(dispatch) {
+  return function (dispatch) {
     axios.get(URL)
       .then((res) => {
-        dispatch({ type: types.ADD_ALL_TODOS })
+        dispatch({ type: types.ADD_ALL_TODOS, payload: res.data })
       })
       .catch((err) => {
         debugger
@@ -30,13 +30,13 @@ export function getTodos() {
 }
 
 export function addTodo(todoName) {
-  return function(dispatch) {
+  return function (dispatch) {
     // here we use axios and on success then dispatch the proper action
   }
 }
 
 export function toggleCompleted(id) {
-  return function(dispatch) {
+  return function (dispatch) {
     // here we use axios and on success then dispatch the proper action
   }
 }
