@@ -36,7 +36,7 @@ export function addTodo(todoName) { // type string
         dispatch({ type: types.ADD_TODO, payload: res.data.data })
       })
       .catch(err => {
-        
+        dispatch({ type: 'SET_ERROR'})
       })
   }
 }
