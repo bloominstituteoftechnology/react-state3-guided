@@ -45,5 +45,11 @@ export function addTodo(todoName) { // type string
 export function toggleCompleted(id) {
   return function (dispatch) {
     axios.patch(URL + id)
+      .then(res=> {
+        debugger
+      })
+      .catch(err => {
+        debugger
+      })
   }
 }
