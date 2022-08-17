@@ -33,7 +33,8 @@ export function addTodo(todoName) { // type string
   return function (dispatch) {
     axios.post(URL, { name: todoName })
       .then(res => {
-        //?????
+        console.log(res)
+        debugger
       })
       .catch(err => {
 
