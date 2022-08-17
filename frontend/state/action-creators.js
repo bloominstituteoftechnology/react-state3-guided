@@ -21,7 +21,7 @@ export function getTodos() {
   return function(dispatch) {
     axios.get(URL)
       .then((res) => {
-        dispatch({ type: types. })
+        dispatch({ type: types.ADD_ALL_TODOS })
       })
       .catch((err) => {
         debugger
