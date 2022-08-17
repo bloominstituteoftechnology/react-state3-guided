@@ -3,7 +3,7 @@ import Form from './Form'
 import TodoList from './TodoList'
 // REDUX related imports
 import { connect } from 'react-redux' // utility to "connect"
-import * as actions from '../state/action-creators'
+import { }
 
 function App(props) {
   useEffect(() => {
@@ -25,7 +25,7 @@ function App(props) {
 // creators arrive into the component via props
 function mapStateToProps(state) {
   return {
-    displayCompleteds: state.displayCompleteds
+    displayCompleteds: state.displayCompleteds,
   }
 }
-export default connect(st => st, actions)(App)
+export default connect(mapStateToProps, actions)(App)
