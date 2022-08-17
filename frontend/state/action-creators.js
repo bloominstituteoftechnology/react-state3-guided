@@ -21,9 +21,11 @@ export function getTodos() {
   return function(dispatch) {
     axios.get(URL)
       .then(() => {
+
+      })
+      .catch(() => {
         
       })
-      .catch()
   }
 }
 
