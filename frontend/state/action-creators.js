@@ -31,7 +31,7 @@ export function getTodos() {
 
 export function addTodo(todoName) {
   return function (dispatch) {
-    // here we use axios and on success then dispatch the proper action
+    axios.post(URL, )
   }
 }
 
