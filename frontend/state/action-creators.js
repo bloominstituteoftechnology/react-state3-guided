@@ -15,7 +15,7 @@ export function toggleDisplayCompleteds() {
 }
 
 // ASYNC ACTION CREATORS
-const URL = 'http'
+const URL = 'http://localhost:9000/api/todos/' // add slash at the end!
 
 export function getTodos() {
   return function(dispatch) {
