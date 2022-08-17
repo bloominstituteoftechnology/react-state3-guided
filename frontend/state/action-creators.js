@@ -47,7 +47,7 @@ export function toggleCompleted(id) {
     axios.patch(URL + id)
       .then(res => {
         // dispatch({ type: types.TOGGLE_COMPLETED, payload: res.data.data })
-        dispatch(getTodos())
+        dispatch(getTodos()) // inefficient!
       })
       .catch(err => {
         debugger
