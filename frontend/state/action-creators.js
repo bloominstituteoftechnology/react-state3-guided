@@ -22,9 +22,13 @@ export function getTodos() {
 }
 
 export function addTodo(todoName) {
-  // here we use axios and on success then dispatch the proper action
+  return function(dispatch) {
+    // here we use axios and on success then dispatch the proper action
+  }
 }
 
 export function toggleCompleted(id) {
-  // here we use axios and on success then dispatch the proper action
+  return function(dispatch) {
+    // here we use axios and on success then dispatch the proper action
+  }
 }
