@@ -18,6 +18,6 @@ function App(props) {
   )
 }
 
-// by connecting, each slice of state
-// and each A.C. arrives into the component via props
+// by connecting, slices of state and action
+// creators arrive into the component via props
 export default connect(st => st, actions)(App)
