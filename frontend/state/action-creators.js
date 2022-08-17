@@ -46,7 +46,8 @@ export function toggleCompleted(id) {
   return function (dispatch) {
     axios.patch(URL + id)
       .then(res => {
-        dispatch({ type: types.TOGGLE_COMPLETED, payload: res.data.data })
+        // dispatch({ type: types.TOGGLE_COMPLETED, payload: res.data.data })
+        dispatch(getTodos())
       })
       .catch(err => {
         debugger
