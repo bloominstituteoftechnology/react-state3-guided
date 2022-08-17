@@ -20,7 +20,9 @@ const URL = 'http://localhost:9000/api/todos/' // add slash at the end!
 export function getTodos() {
   return function(dispatch) {
     axios.get(URL)
-      .then()
+      .then(() => {
+        
+      })
       .catch()
   }
 }
