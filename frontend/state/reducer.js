@@ -5,7 +5,7 @@ const initialTodos = []
 function todos(todosState = initialTodos, action) {
   switch (action.type) {
     case types.ADD_ALL_TODOS: {
-      todosState.concat(action.payload)
+      return action.payload
     }
     case types.TOGGLE_COMPLETED: {
       const id = action.payload
