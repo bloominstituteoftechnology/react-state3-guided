@@ -11,6 +11,9 @@ function App(props) {
       <h1>Todo App</h1>
       <TodoList />
       <Form />
+      <button onClick={props.toggleDisplayCompleteds}>
+        {props.displayCompleteds ? 'Hide' : 'Show'} Completed
+      </button>
     </div>
   )
 }
