@@ -3,7 +3,7 @@ import Form from './Form'
 import TodoList from './TodoList'
 // REDUX related imports
 import { connect } from 'react-redux' // utility to "connect"
-import { toggleDisplayCompleteds } from '../state/action-creators'
+import { toggleDisplayCompleteds, getTodos } from '../state/action-creators'
 
 function App(props) {
   useEffect(() => {
@@ -28,4 +28,4 @@ function mapStateToProps(state) {
     displayCompleteds: state.displayCompleteds,
   }
 }
-export default connect(mapStateToProps, { toggleDisplayCompleteds })(App)
+export default connect(mapStateToProps, { toggleDisplayCompleteds, getTodos })(App)
