@@ -1,5 +1,5 @@
 export const INPUT_CHANGE = 'INPUT_CHANGE'
 export const ADD_TODO = 'ADD_TODO'
-export const ADD_ALL_TODOS = 'ADD_ALL_TODOS'
+export const ADD_ALL_TODOS = 'ADD_ALL_TODOS' // the new action type
 export const TOGGLE_DISPLAY_COMPLETEDS = 'TOGGLE_DISPLAY_COMPLETEDS'
 export const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED'
